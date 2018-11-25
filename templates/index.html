@@ -3,8 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+{#    <script>#}
+{#    window.onload = function (){#}
+{#        var user_name = document.getElementById("user_name").value;#}
+{#        var user_pwd = document.getElementById("user_name").value;#}
+{##}
+{#        function a_onclick() {#}
+{#            user_list = [user_name, user_pwd];#}
+{#            return user_list#}
+{#        }#}
+{##}
+{#    }#}
+{#</script>#}
 </head>
 <body>
-<h1>欢迎使用python flask web</h1>
+<h1>简单的注册登陆系统</h1>
+<hr>
+<form method="post">
+    用户名:<input type="text" id="user_name" name="user_name" value="">
+    密码:<input type="password" id="user_pwd" name="user_pwd" value="">
+    <input type="submit" value="注册">
+{#    <a onclick="a_onclick()" href="/login/{{ user_list }}">登陆</a>#}
+    {{ index_meg }}
+</form>
 </body>
 </html>
