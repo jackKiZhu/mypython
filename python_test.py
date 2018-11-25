@@ -1,17 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return "my flask web"
-
-@app.route("/user")
-def user_info():
-    return "username:123, userpassword:321"
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
     
 
