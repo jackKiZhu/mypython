@@ -8,7 +8,7 @@ def index():
 
 @app.route("/user")
 def user_info():
-    return "username:123, userpassword:321"
+    return "username:123, 123:321"
 
 
 if __name__ == "__main__":
