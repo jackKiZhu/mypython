@@ -24,6 +24,7 @@ def index():
         if not all([user_name, user_pwd]):
             index_meg = "请正确输入信息"
         else:
+            print(request.get_data())
             user_name_is_exits = User.query.filter(User.user_name == user_name).first()
             if user_name_is_exits:
                 index_meg = "用户名已存在"
@@ -32,14 +33,23 @@ def index():
                 db.session.add(user_obj)
                 db.session.commit()
                 index_meg = "注册成功"
+                print("注册成功")
 
+    # user_name = request.args.get("user_name", "")
+    # user_pwd = request.args.get("user_pwd", "")
+    # user_is_login = User.query.filter_by(user_name=user_name, user_password=user_pwd).first()
+    # if user_is_login:
+    #     index_meg = "登陆成功"
+    #     print("登陆成功")
+    #     return render_template("login_ok.html", index_meg=index_meg)
+    # else:
+    #     # index_meg = "登陆失败"
+    #     print("登陆失败")
     return render_template("index.html", index_meg=index_meg)
 
 
-# @app.route("/login/<user_info>")
+# @app.route("/login")
 # def user_login(user_info):
-#     return user_info
-
 
 
 if __name__ == "__main__":
